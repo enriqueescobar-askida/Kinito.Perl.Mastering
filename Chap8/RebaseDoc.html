@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Rebase.pm</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#rebase">Rebase</a></li>
+	<li><a href="#synopsis">Synopsis</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#copyright">COPYRIGHT</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="rebase">Rebase</a></h1>
+<p><table cellspacing="0" cellpadding="0"><tr><td>Rebase: A simple interface to recognition sites and translations of them into
+<tr><td><td>regular expressions, from the Restriction Enzyme Database (Rebase)</table></p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">Synopsis</a></h1>
+<pre>
+        use Rebase;</pre>
+<pre>
+        # Use &quot;bionetfile&quot; to create and populate dbm file
+        my $rebase = Rebase-&gt;new(
+                dbmfile =&gt; 'BIONET',
+        bionetfile =&gt; 'bionet.212',
+        mode =&gt; 0644
+        );</pre>
+<pre>
+        # Use without &quot;bionetfile&quot; to attach to existing dbm file
+        my $rebase = Rebase-&gt;new(
+                dbmfile =&gt; 'BIONET',
+        mode =&gt; 0444
+        );</pre>
+<pre>
+        my $enzyme = 'EcoRI';</pre>
+<pre>
+        print &quot;Looking up restriction enzyme $enzyme\n&quot;;</pre>
+<pre>
+        my @sites = $rebase-&gt;get_recognition_sites($enzyme);
+        print &quot;Sites are @sites\n&quot;;</pre>
+<pre>
+        my @res = $rebase-&gt;get_regular_expressions($enzyme);
+        print &quot;Regular expressions are @res\n&quot;;</pre>
+<pre>
+        print &quot;DBM file is &quot;, $rebase-&gt;get_dbmfile, &quot;\n&quot;;
+        print &quot;Rebase bionet file is &quot;, $rebase-&gt;get_bionetfile, &quot;\n&quot;;</pre>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>James Tisdall</p>
+<p>
+</p>
+<hr />
+<h1><a name="copyright">COPYRIGHT</a></h1>
+<p>Copyright (c) 2003, James Tisdall
+
+</p>
+
+</body>
+
+</html>

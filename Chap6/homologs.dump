@@ -1,0 +1,43 @@
+# MySQL dump 8.14
+#
+# Host: localhost    Database: homologs
+#--------------------------------------------------------
+# Server version	3.23.41
+
+#
+# Table structure for table 'genename'
+#
+
+CREATE TABLE genename (
+  name char(20) default NULL,
+  id int(11) default NULL,
+  date date default NULL
+) TYPE=MyISAM;
+
+#
+# Dumping data for table 'genename'
+#
+
+INSERT INTO genename VALUES ('aging',118,'1984-07-13');
+INSERT INTO genename VALUES ('wrinkle',9223,'1987-08-15');
+INSERT INTO genename VALUES ('hairy',273,'1990-09-30');
+
+#
+# Table structure for table 'organism'
+#
+
+CREATE TABLE organism (
+  organism char(20) default NULL,
+  gene char(20) default NULL
+) TYPE=MyISAM;
+
+#
+# Dumping data for table 'organism'
+#
+
+INSERT INTO organism VALUES ('human','118');
+INSERT INTO organism VALUES ('human','9223');
+INSERT INTO organism VALUES ('mouse','9223');
+INSERT INTO organism VALUES ('mouse','273');
+INSERT INTO organism VALUES ('worm','118');
+

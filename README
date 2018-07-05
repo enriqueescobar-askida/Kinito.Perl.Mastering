@@ -1,0 +1,349 @@
+
+README for the code for Mastering Perl for Bioformatics
+
+Copyright 2003 by James Tisdall
+
+
+The test programs usually contain a commented-out line:
+
+#use lib "/home/tisdall/MasteringPerlBio/development/lib";
+
+The line points to my library, where I put my .pm modules.
+Obviously, this specific directory is local to my computer.
+The discussion in Chapter 1 will explain various options
+on how to get your Perl programs to find your libraries.
+(Simplest is to have the test programs and the .pm modules
+in the same directory; or you can edit the commented-out
+line to refer to your own library directory; you can
+specify the location of the library on the perl command
+line; and there are other options as well.)
+
+
+##################################################
+Chapter 1
+##################################################
+
+
+
+Geneticcode1.pm
+Geneticcode2.pm
+sample.dna
+SequenceIO.pm
+testGeneticcode1
+testGeneticcode2
+
+##################################################
+
+In Chapter 1 I have two versions of the Geneticcode.pm module.
+I've renamed them Geneticcode1.pm and Geneticcode2.pm
+so you can try out all the code without having to edit it.
+
+
+
+##################################################
+Chapter 2
+##################################################
+
+
+approximatestringmatching
+
+
+
+##################################################
+Chapter 3
+##################################################
+
+
+Gene1.pm
+Gene2.pm
+Gene3.pm
+Gene.pm
+testGene
+testGene1
+testGene2
+testGene3
+
+
+
+##################################################
+
+
+Notice in the clone method in class Gene.pm
+that there is an added test to see whether
+the method is being called from an
+already existing object (good) or from the
+class (bad).
+
+
+
+##################################################
+Chapter 4
+##################################################
+
+
+file1.txt
+FileIO.pm
+record.embl
+record.fasta
+record.gb
+record.gcg
+record.raw
+record.staden
+SeqFileIO.pm
+testFileIO
+testSeqFileIO
+
+
+
+##################################################
+
+
+In FileIO.pm, there are two places where the following lines
+appear in the book:
+
+        # Turn strict references back on
+        no strict "refs";
+
+This is an error, so in this code they have been changed
+to the following:
+
+        # Turn strict references back on
+        use strict "refs";
+
+#######################################################
+
+In testFileIO, the name of one of the disk files is
+"file2"; this has been changed to "file2.txt" for
+consistency.
+
+#######################################################
+
+In the text, Don Gilbert's package is incorrectly referenced.
+"iobio" should be "iubio".  The footnote and the item
+in the References section where this software is
+mentioned also fail to point out that there is a new,
+now standard version of the package written in the Java
+programming language.
+
+#######################################################
+
+At the very end of SeqFileIO.pm, this additional method
+is not in the code shown in the text:
+
+sub parse_unknown {
+  return;
+}
+
+#######################################################
+
+In the test program testSeqFileIO, all occurences of
+
+get_filetype
+
+as printed in the textbook should be
+
+get_format
+
+as in the code in this directory.
+
+(In early versions of this software, I used the term
+ "filetype" to distinguish between different sequence
+ file formats.  However, the term "filetype" is usually
+ used to differentiate between, say, text files and jpeg
+ files.  So I changed the code to use the term "format",
+ since in biology these different files, which are all
+ text files, are known as "sequence file formats".  It
+ was a revision intended to make the code more readable
+ by using appropriate variable names.  Unfortunately,
+ although the text gives the correct version of SeqFileIO.pm,
+ it gives the older version of testSeqFileIO.)
+
+
+
+
+##################################################
+Chapter 5
+##################################################
+
+
+bionet.212
+map.fasta
+Rebase.pm
+Restrictionmap.pm
+Restriction.pm
+sampleecori.dna
+testRebase
+testRestriction
+testRestrictionmap
+
+
+
+##################################################
+
+
+testRebase includes both kinds of calls to Rebase->new,
+which is mentioned but not shown in the textbook.
+
+###############################################
+
+In Restrictionmap.pm, in subroutine _drawmap_text, 
+	_add_annotation_text(^annotation, $enzyme, $self->get_enzyme_map($enzyme));
+should be, and is in the code given here,
+	_add_annotation_text(\@annotation, $enzyme, $self->get_enzyme_map($enzyme));
+
+###############################################
+
+At the end of Restrictionmap.pm, in the POD documentation, the lines
+	enzyme => 'EcoRI',
+	enzyme => 'HindIII',
+should be
+	enzyme => 'EcoRI HindIII',
+
+
+###############################################
+
+In "testRestrictionmap", these two lines
+
+#$biggerseq->read(filename => 'map.fasta');
+$biggerseq->read(filename => 'sampleecori.dna');
+
+should be set to 
+
+$biggerseq->read(filename => 'map.fasta');
+#$biggerseq->read(filename => 'sampleecori.dna');
+
+to get something like the output in the textbook.
+But try it both ways!
+
+###############################################
+
+The output of "testRestrictionmap" has eliminated many
+blank lines in the textbook.  See Exercise 5.8 and
+the code for Restrictionmap.pm for the alternate ways
+of printing the output.
+
+
+
+##################################################
+Chapter 6
+##################################################
+
+homologs.dump
+homologs.getdata1
+homologs.getdata2
+homologs.load
+homologs.tabs
+RebaseDB.pm
+testRebaseDB
+
+
+##################################################
+
+In Handling Tab-Delimited Input Files there is an
+example file with three tables; it is called
+"homologs.tabs" in this directory.
+
+##################################################
+
+
+The text has a program homologs.getdata that reads in
+the homologs.tabs flat file and reformats it; I call
+it "homologs.getdata1"
+
+##################################################
+
+
+The text has a program homologs.getdata (in DBI Examples)
+that gets information from a MySQL database; I've
+renamed it "homologs.getdata2"
+
+##################################################
+
+
+The program "testRebaseDB" is slightly altered from
+that given in the text; here, "use strict" and
+"use warnings" are turned on, and the multiple
+"my" declarations of the variables $enzyme, $sites,
+and @res are pared down to one declaration each.
+
+
+
+
+##################################################
+Chapter 7
+##################################################
+
+htmlexample1.html
+cgiex1
+cgiex1.cgi
+webrebase1
+
+##################################################
+Chapter 8
+##################################################
+
+webrebase
+Restrictionmap.pm
+gd1.pl
+gd2.pl
+
+##################################################
+
+
+In gd1.pl, the following two lines in the text:
+    [ ^xsizes,
+      ^ycounts
+are incorrect; they are given correctly here as:
+    [ \@xsizes,
+      \@ycounts
+
+##################################################
+
+In gd2.pl, the following two lines in the text
+appear in two locatios as:
+    [ ^xsizes,
+      ^ycounts
+They are incorrect; they are given correctly here as:
+    [ \@xsizes,
+      \@ycounts
+ 
+
+
+##################################################
+Chapter 9
+##################################################
+
+AI129902.genbank
+array.fasta
+bp0.pl
+bp0.pl.broken
+bp1.pl
+tut1.pl
+tut2.pl.broken
+tut2.pl.fixed
+
+##################################################
+
+tut2.pl has a first version in the textbook which
+produces an error.  Here, I call that version
+tut2.pl.broken
+
+
+##################################################
+
+
+In the textbook version of bp1.pl, the line
+
+my $seq_object5 = get_sequence('genbank',"AI129902");
+
+isn't working for me now (October 2003).  I note that the documentation for
+this method says
+"Swissprot and EMBL are more robust than GenBank fetching."
+So I tried changing the line from the GenBank accession number
+to the GenBank gi number, and now it works:
+
+my $seq_object5 = get_sequence('genbank',"3598416");
+
+##################################################
+End of README file
+##################################################

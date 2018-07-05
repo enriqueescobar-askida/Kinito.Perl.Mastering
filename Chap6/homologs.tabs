@@ -1,0 +1,19 @@
+TABLE	ORGANISM
+OrgId	Organism
+1	human
+2	worm
+3	mouse
+
+TABLE	GENES
+GeneId	Gene	Date
+118	aging	1984-07-13
+9223	wrinkle	1987-08-15
+273	hairy	1990-09-30
+
+TABLE	VARIANTS
+VarId	OrgId	GeneId
+1	1	118
+2	2	118
+3	1	9223
+4	3	9223
+5	3	273

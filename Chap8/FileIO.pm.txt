@@ -1,0 +1,61 @@
+FileIO
+    FileIO: read and write file data
+
+Synopsis
+            use FileIO;
+
+            my $obj = RawfileIO->read(
+                    filename => 'jkl'
+            );
+
+            print $obj->get_filename, "\n";
+            print $obj->get_filedata;
+
+            $obj->set_date('today');
+            print $obj->get_date, "\n";
+
+            print $obj->get_writemode, "\n";
+
+            my @newdata = ("line1\n", "line2\n");
+            $obj->set_filedata( \@newdata );
+
+            $obj->write(filename => 'lkj');
+            $obj->write(filename => 'lkj', writemode => '>>');
+
+            my $o = RawfileIO->read(filename => 'lkj');
+            print $o->get_filename, "\n";
+            print $o->get_filedata;
+
+            my $gene1 = Gene->new(
+                    name => 'biggene',
+                    organism => 'Mus musculus',
+                    chromosome => '2p',
+                    pdbref => 'pdb5775.ent',
+                    author => 'L.G.Jeho',
+                    date => 'August 23, 1989',
+            );
+
+            print "Gene name is ", $gene1->get_name();
+            print "Gene organism is ", $gene1->get_organism();
+            print "Gene chromosome is ", $gene1->get_chromosome();
+            print "Gene pdbref is ", $gene1->get_pdbref();
+            print "Gene author is ", $gene1->get_author();
+            print "Gene date is ", $gene1->get_date();
+
+            $clone = $gene1->clone(name => 'biggeneclone');
+
+            $gene1-> set_chromosome('2q');
+            $gene1-> set_pdbref('pdb7557.ent');
+            $gene1-> set_author('G.Mendel');
+            $gene1-> set_date('May 25, 1865');
+
+            $clone->citation('T.Morgan', 'October 3, 1912');
+
+            print "Clone citation is ", $clone->citation;
+
+AUTHOR
+    James Tisdall
+
+COPYRIGHT
+    Copyright (c) 2003, James Tisdall
+

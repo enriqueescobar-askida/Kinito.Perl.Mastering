@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FileIO.pm</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#fileio">FileIO</a></li>
+	<li><a href="#synopsis">Synopsis</a></li>
+	<li><a href="#author">AUTHOR</a></li>
+	<li><a href="#copyright">COPYRIGHT</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="fileio">FileIO</a></h1>
+<p>FileIO: read and write file data</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">Synopsis</a></h1>
+<pre>
+        use FileIO;</pre>
+<pre>
+        my $obj = RawfileIO-&gt;read(
+                filename =&gt; 'jkl'
+        );</pre>
+<pre>
+        print $obj-&gt;get_filename, &quot;\n&quot;;
+        print $obj-&gt;get_filedata;</pre>
+<pre>
+        $obj-&gt;set_date('today');
+        print $obj-&gt;get_date, &quot;\n&quot;;</pre>
+<pre>
+        print $obj-&gt;get_writemode, &quot;\n&quot;;</pre>
+<pre>
+        my @newdata = (&quot;line1\n&quot;, &quot;line2\n&quot;);
+        $obj-&gt;set_filedata( \@newdata );</pre>
+<pre>
+        $obj-&gt;write(filename =&gt; 'lkj');
+        $obj-&gt;write(filename =&gt; 'lkj', writemode =&gt; '&gt;&gt;');</pre>
+<pre>
+        my $o = RawfileIO-&gt;read(filename =&gt; 'lkj');
+        print $o-&gt;get_filename, &quot;\n&quot;;
+        print $o-&gt;get_filedata;</pre>
+<pre>
+        my $gene1 = Gene-&gt;new(
+                name =&gt; 'biggene',
+                organism =&gt; 'Mus musculus',
+                chromosome =&gt; '2p',
+                pdbref =&gt; 'pdb5775.ent',
+                author =&gt; 'L.G.Jeho',
+                date =&gt; 'August 23, 1989',
+        );</pre>
+<pre>
+        print &quot;Gene name is &quot;, $gene1-&gt;get_name();
+        print &quot;Gene organism is &quot;, $gene1-&gt;get_organism();
+        print &quot;Gene chromosome is &quot;, $gene1-&gt;get_chromosome();
+        print &quot;Gene pdbref is &quot;, $gene1-&gt;get_pdbref();
+        print &quot;Gene author is &quot;, $gene1-&gt;get_author();
+        print &quot;Gene date is &quot;, $gene1-&gt;get_date();</pre>
+<pre>
+        $clone = $gene1-&gt;clone(name =&gt; 'biggeneclone');</pre>
+<pre>
+        $gene1-&gt; set_chromosome('2q');
+        $gene1-&gt; set_pdbref('pdb7557.ent');
+        $gene1-&gt; set_author('G.Mendel');
+        $gene1-&gt; set_date('May 25, 1865');</pre>
+<pre>
+        $clone-&gt;citation('T.Morgan', 'October 3, 1912');</pre>
+<pre>
+        print &quot;Clone citation is &quot;, $clone-&gt;citation;</pre>
+<p>
+</p>
+<hr />
+<h1><a name="author">AUTHOR</a></h1>
+<p>James Tisdall</p>
+<p>
+</p>
+<hr />
+<h1><a name="copyright">COPYRIGHT</a></h1>
+<p>Copyright (c) 2003, James Tisdall</p>
+
+</body>
+
+</html>

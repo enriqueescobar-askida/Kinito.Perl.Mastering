@@ -1,0 +1,32 @@
+Restriction
+    Restriction: Given a Rebase object, sequence, and list of restriction
+    enzyme names, return the locations of the recognition sites in the
+    sequence
+
+Synopsis
+            use Restriction;
+
+            use Rebase;
+
+            use strict;
+            use warnings;
+
+            my $rebase = Rebase->new(
+                    dbmfile => 'BIONET',
+            bionetfile => 'bionet.212'
+            );
+
+            my $restrict = Restriction->new(
+                    rebase => $rebase,
+            enzyme => 'EcoRI, HindIII',
+            sequence => 'ACGAATTCCGGAATTCG',
+            );
+
+            print "Locations for EcoRI are ", join(' ', $restrict->get_enzyme_map('EcoRI')), "\n";
+
+AUTHOR
+    James Tisdall
+
+COPYRIGHT
+    Copyright (c) 2003, James Tisdall
+

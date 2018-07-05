@@ -1,0 +1,35 @@
+Restrictionmap
+    Restrictionmap: Given a Rebase object, sequence, and list of restriction
+    enzyme names, return the locations of the recognition sites in the
+    sequence
+
+Synopsis
+            use Restrictionmap;
+
+            use Rebase;
+
+            use strict;
+            use warnings;
+
+            my $rebase = Rebase->new(
+                    dbmfile => 'BIONET',
+            bionetfile => 'bionet.212'
+            );
+
+            my $restrict = Restrictionmap->new(
+                    rebase => $rebase,
+            enzyme => 'EcoRI HindIII',
+            sequence => 'ACGAATTCCGGAATTCG',
+            graphictype => 'text',
+            );
+
+            print "Locations are ", join ' ', $restrict->get_enzyme_map('EcoRI'), "\n";
+
+            print $restrict->get_graphic;
+
+AUTHOR
+    James Tisdall
+
+COPYRIGHT
+    Copyright (c) 2003, James Tisdall
+

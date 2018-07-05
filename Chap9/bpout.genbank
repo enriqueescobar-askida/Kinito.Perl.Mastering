@@ -1,0 +1,60 @@
+LOCUS       sample                  1080 bp    dna     linear   UNK 
+DEFINITION  dna  (This is a typical fasta header.)
+ACCESSION   unknown
+FEATURES             Location/Qualifiers
+BASE COUNT      230 a    302 c    373 g    175 t
+ORIGIN
+        1 agatggcggc gctgaggggt cttgggggct ctaggccggc cacctactgg tttgcagcgg
+       61 agacgacgca tggggcctgc gcaataggag tacgctgcct gggaggcgtg actagaagcg
+      121 gaagtagttg tgggcgcctt tgcaaccgcc tgggacgccg ccgagtggtc tgtgcaggtt
+      181 cgcgggtcgc tggcgggggt cgtgagggag tgcgccggga gcggagatat ggagggagat
+      241 ggttcagacc cagagcctcc agatgccggg gaggacagca agtccgagaa tggggagaat
+      301 gcgcccatct actgcatctg ccgcaaaccg gacatcaact gcttcatgat cgggtgtgac
+      361 aactgcaatg agtggttcca tggggactgc atccggatca ctgagaagat ggccaaggcc
+      421 atccgggagt ggtactgtcg ggagtgcaga gagaaagacc ccaagctaga gattcgctat
+      481 cggcacaaga agtcacggga gcgggatggc aatgagcggg acagcagtga gccccgggat
+      541 gagggtggag ggcgcaagag gcctgtccct gatccagacc tgcagcgccg ggcagggtca
+      601 gggacagggg ttggggccat gcttgctcgg ggctctgctt cgccccacaa atcctctccg
+      661 cagcccttgg tggccacacc cagccagcat caccagcagc agcagcagca gatcaaacgg
+      721 tcagcccgca tgtgtggtga gtgtgaggca tgtcggcgca ctgaggactg tggtcactgt
+      781 gatttctgtc gggacatgaa gaagttcggg ggccccaaca agatccggca gaagtgccgg
+      841 ctgcgccagt gccagctgcg ggcccgggaa tcgtacaagt acttcccttc ctcgctctca
+      901 ccagtgacgc cctcagagtc cctgccaagg ccccgccggc cactgcccac ccaacagcag
+      961 ccacagccat cacagaagtt agggcgcatc cgtgaagatg agggggcagt ggcgtcatca
+     1021 acagtcaagg agcctcctga ggctacagcc acacctgagc cactctcaga tgaggaccta
+//
+LOCUS       map.fasta                878 bp    dna     linear   UNK 
+DEFINITION  | contains EcoRI and HindIII sites
+ACCESSION   unknown
+FEATURES             Location/Qualifiers
+BASE COUNT      188 a    244 c    300 g    146 t
+ORIGIN
+        1 agatggcggc gctgaggggt cttgggggct ctaggccggc cacctactgg tttgcagcgg
+       61 agacgacgca tggggcctgc gcaataggag tacgctgcct gggaggcgtg actagaagcg
+      121 ggaattcaag tagttgtggg cgcctttgca accgcctggg acgccgccga gtggtctgtg
+      181 caggttcgcg ggtcgctggc gggggtcgta agcttgaggg agtgcgccgg gagcggagat
+      241 atggagggag atggttcaga cccagagcct ccagatgccg gggaggacag caagtccgag
+      301 aatggggaga atgcgcccat ctactgcatc tgccgcaaac cggacatcaa ctgcttcatg
+      361 atcgggtgtg acaagcttaa ctgcaatgag tggttccatg gggactgcat ccggatcagc
+      421 gggatggcaa tgagcgggac agcagtgagc cccgggatga gggtggaggg cgcaagaggc
+      481 ctgtccctga tccagacctg cagcgccggg cagggtcagg gacaggggtt ggggccatgc
+      541 ttgctcgggg ctctgcttcg ccccacaaat cctctccgca gcccttggtg gccacgaatt
+      601 cacccagcca gcatcaccag cagcagcagc agcagatcaa acggtcagcc aagcttgaat
+      661 tccgcatgtg tggtgagtgt gaggcaccag tgacgccctc agagtccctg ccaaggcccc
+      721 gccggccact gcccacccaa cagcagccac agccatcaca gaagttaggg aattcgcgca
+      781 tccgtgaaga tgagggggca gtggcgtcat caacagtcaa ggagcctcct ggaattcagg
+      841 ctacagccac acctgagcca ctctcagatg aggaccta
+//
+LOCUS       AB031069                 267 bp    dna     linear   UNK 
+DEFINITION  2487 bp    mRNA            PRI       27-MAY-2000 Sequence severely
+            truncated for demonstration. AB031069
+ACCESSION   unknown
+FEATURES             Location/Qualifiers
+BASE COUNT       65 a     54 c    106 g     42 t
+ORIGIN
+        1 agatggcggc gctgaggggt cttgggggct ctaggccggc cacctactgg tttgcagcgg
+       61 agacgacgca tggggcctgc gcaataggag tacgctgcct gggaggcgtg actagaagcg
+      121 gaagtagttg tgggcgcctt tgcaaccgcc tgggacgccg ccgagtggtc tgtgcaggtt
+      181 cgcgggtcgc tggcgggggt cgtgagggag tgcgccggga gcggagatat ggagggagat
+      241 aaaaaaaaaa aaaaaaaaaa aaaaaaa
+//

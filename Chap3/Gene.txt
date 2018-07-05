@@ -1,0 +1,39 @@
+Gene
+    Gene: objects for Genes with a minimum set of attributes
+
+Synopsis
+            use Gene;
+
+            my $gene1 = Gene->new(
+                    name => 'biggene',
+                    organism => 'Mus musculus',
+                    chromosome => '2p',
+                    pdbref => 'pdb5775.ent',
+                    author => 'L.G.Jeho',
+                    date => 'August 23, 1989',
+            );
+
+            print "Gene name is ", $gene1->get_name();
+            print "Gene organism is ", $gene1->get_organism();
+            print "Gene chromosome is ", $gene1->get_chromosome();
+            print "Gene pdbref is ", $gene1->get_pdbref();
+            print "Gene author is ", $gene1->get_author();
+            print "Gene date is ", $gene1->get_date();
+
+            $clone = $gene1->clone(name => 'biggeneclone');
+
+            $gene1-> set_chromosome('2q');
+            $gene1-> set_pdbref('pdb7557.ent');
+            $gene1-> set_author('G.Mendel');
+            $gene1-> set_date('May 25, 1865');
+
+            $clone->citation('T.Morgan', 'October 3, 1912');
+
+            print "Clone citation is ", $clone->citation;
+
+AUTHOR
+    A kind reader
+
+COPYRIGHT
+    Copyright (c) 2003, We Own Gene, Inc.
+
